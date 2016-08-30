@@ -6,21 +6,15 @@
     <p><strong>{{ app_count }}</strong> apps, sorted by {{ include.sort-desc }}</p>
 </header>
 
-{% assign num_rows = app_count | divide_by: site.items_per_row %}
-  {% for i in (0..num_rows) %}
-  <div class="row-ex-{{ i }}">
-    {% assign offset = i | times: site.items_per_row %}
-    {% for app in include.apps limit: site.items_per_row offset: offset %}
-    <div class="col-xs-2" style="text-align: left; height: 200px;">
-      <figure>
+{% for app in include.apps %}
+<div class="col-xs-6 col-md-3 col-lg-2" style="text-align: left; height: 200px;">
+    <figure>
         <a href="ms-windows-store://pdp/?ProductId={{ app.ProductId }}">
-          <img style="background-color: #eee" src="{{ app.Tile }}" height="100px" width="100px">
+            <img class="b-lazy" style="background-color: #eee" data-src="{{ app.Tile }}" height="100px" width="100px" />
         </a>
         <figurecaption>
-          <p style="width: 100px; word-wrap:break-word">{{ app.Title }}</p>
+            <p style="width: 100px; word-wrap:break-word">{{ app.Title }}</p>
         </figurecaption>
-      </figure>
-    </div>
-    {% endfor %}
-  </div>
-  {% endfor %}
+    </figure>
+</div>
+{% endfor %}
