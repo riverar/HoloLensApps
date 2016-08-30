@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% include nav.html %}
+
+<div class="home">
+
+  {% assign apps = site.data.store.Products | where:'SupportsHolographicExclusively','true' | sort: 'LastUpdated' | reverse %}
+  {% include apps.html title="Made for HoloLens" apps=apps sort-desc="last update time, desc" %}
+
+  {% assign apps = site.data.store.Products | where:'SupportsHolographicExclusively','false' | sort: 'LastUpdated' | reverse %}
+  {% include apps.html title="Works on HoloLens" apps=apps sort-desc="last update time, desc" %}
+
+</div>
