@@ -30,6 +30,10 @@
 
     <script>
       $(function() {
+        
+        var lastUpdated = $("#last-updated-datetime");
+        lastUpdated.text(new Date(lastUpdated.text()).toLocaleString());
+        
         var bLazy = new Blazy();
       });
     </script>

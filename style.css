@@ -1,3 +1,11 @@
+.navbar {
+    margin-top: 1em;
+}
+
+.navbar #last-updated {
+    color: #bbb;
+}
+
 .home h1 {
     font-family: 'Segoe UI';
     font-weight: 100;

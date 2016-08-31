@@ -7,7 +7,7 @@
 </header>
 
 {% for app in include.apps %}
-<div class="col-xs-6 col-md-3 col-lg-2" style="text-align: left; height: 200px;">
+<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="text-align: left; height: 200px;">
     <figure>
         <a href="ms-windows-store://pdp/?ProductId={{ app.ProductId }}">
             <img class="b-lazy" style="background-color: #eee" data-src="{{ app.Tile }}" height="100px" width="100px" />
